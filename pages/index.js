@@ -22,7 +22,7 @@ export default function Home() {
         <nav className="navbar bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <img src="logo.svg" alt="" />
+              <Image src="logo.svg" alt="" />
             </a>
           </div>
         </nav>

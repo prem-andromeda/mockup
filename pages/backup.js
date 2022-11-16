@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <img
+        <Image
           src="apnapaisa-navbar.png"
           alt="Apnapaisa Nav"
           style={{ width: "100vw" }}
