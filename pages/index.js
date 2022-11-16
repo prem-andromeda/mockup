@@ -2,7 +2,6 @@ import Head from "next/head";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -13,22 +12,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        {/* <img
-          src="apnapaisa-navbar.png"
-          alt="Apnapaisa Nav"
-          style={{ width: "100vw" }}
-        /> */}
+      <main className="main">
         <nav className="navbar bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <Image src="logo.svg" alt="" />
+              <img src="logo.svg" alt="" />
             </a>
           </div>
         </nav>
-        <div className="row mt-5 mx-3">
+        <div className="row mt-4 mx-3">
           <div className="col-12 col-md-6 px-0 px-md-5">
-            <div className="mt-1 pt-1 mt-lg--5 pt-lg-5 d-flex flex-column justify-content-center">
+            <div className="mt-1 pt-1 mt-lg-5 pt-lg-5 d-flex flex-column justify-content-center">
               <h1 className="display-4 fw-bold">
                 Your Credit Score is just a click away.
               </h1>
@@ -41,7 +35,7 @@ export default function Home() {
           </div>
 
           <div className="col-12 col-md-6 d-flex justify-content-center px-0 px-md-5 ">
-            <form className="border border-primary rounded p-3 px-md-5 mt-5 mt-md-0 mb-5 mb-md-5 form">
+            <form className="border border-primary rounded p-3 px-md-5 mt-4 mt-md-0 mb-5 mb-md-5 form">
               <div className="">
                 <label className="form-label mt-2" htmlFor="name">
                   Full Name*
@@ -61,7 +55,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="">
-                <label className="form-label mt-5" htmlFor="phoneNumber">
+                <label
+                  className="form-label mt-4 mt-md-5"
+                  htmlFor="phoneNumber"
+                >
                   Phone Number*
                 </label>
                 <div className="input-group">
@@ -80,7 +77,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mb-3 form-check mt-5">
+              <div className="mb-3 form-check mt-4 mt-md-5">
                 <input
                   type="checkbox"
                   className="form-check-input"
