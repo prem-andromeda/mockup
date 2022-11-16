@@ -19,5 +19,9 @@
   "devDependencies": {
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/prem-andromeda/mockup.git",
+  "author": "prem-andromeda <prem.narayankar@andromeda.in>",
+  "license": "MIT"
 }
