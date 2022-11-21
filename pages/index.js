@@ -2,8 +2,41 @@ import Head from "next/head";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [form, setForm] = useState({
+    name: "",
+    phoneNumber: "",
+  });
+
+  const changeHandler = (e) => {
+    e.target.name == "name"
+      ? setForm({
+          ...form,
+          [e.target.name]: e.target.value
+            .replace(/[0-9]/, "")
+            .replace(/[^a-z]/gi, " "),
+        })
+      : setForm({
+          ...form,
+          [e.target.name]: e.target.value.replace(/\D/g, ""),
+        });
+  };
+
+  const formHandler = (e) => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    };
+    e.preventDefault();
+    // inside fetch put api link
+    fetch("", requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div>
       <Head>
@@ -16,7 +49,7 @@ export default function Home() {
         <nav className="navbar bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <Image src="logo.svg" alt="" />
+              <img src="logo.svg" alt="" />
             </a>
           </div>
         </nav>
@@ -48,6 +81,8 @@ export default function Home() {
                     name="name"
                     id="name"
                     placeholder="Full Name"
+                    value={form.name}
+                    onChange={(e) => changeHandler(e)}
                   />
                   <span className="input-group-text">
                     <CgProfile />
@@ -70,6 +105,10 @@ export default function Home() {
                     name="phoneNumber"
                     id="phoneNumber"
                     placeholder="Mobile Number"
+                    minLength={10}
+                    maxLength={10}
+                    value={form.phoneNumber}
+                    onChange={(e) => changeHandler(e)}
                   />
                   <span className="input-group-text">
                     <MdOutlineLocalPhone />
