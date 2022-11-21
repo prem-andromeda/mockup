@@ -3,12 +3,15 @@ import { MdOutlineLocalPhone } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [form, setForm] = useState({
     name: "",
     phoneNumber: "",
   });
+
+  const [consent, setConsent] = useState(true);
 
   const changeHandler = (e) => {
     e.target.name == "name"
@@ -120,23 +123,42 @@ export default function Home() {
                 <input
                   type="checkbox"
                   className="form-check-input"
-                  id="consent1 "
+                  id="consent "
+                  checked={consent}
+                  onChange={() => setConsent(!consent)}
                 />
                 <label
                   className="form-check-label"
-                  htmlFor="consent1 "
+                  htmlFor="consent "
                   style={{ fontSize: "10px" }}
                 >
-                  I confirm to send OTP to the customer as I have verified the
-                  National Do Not Call (NDNC) registry for the above customer.
-                  The NDNC waiver will be extended to Partners of Andromeda to
-                  contact customer for this application.
+                  *I agree to the{" "}
+                  <Link
+                    className="link-decoration"
+                    href="https://apnadhan.com/privacy-policy"
+                  >
+                    Privacy Policy
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    className="link-decoration"
+                    href="https://apnadhan.com/terms-of-use"
+                  >
+                    Terms of use
+                  </Link>{" "}
+                  and hereby appoint the website as my authorised representative
+                  to receive my credit information from CIBIL/ Equifax/
+                  Experian/ CRIF.
                 </label>
               </div>
 
               <div className="d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary">
-                  Submit
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{ border: "none" }}
+                >
+                  SUBMIT
                 </button>
               </div>
             </form>

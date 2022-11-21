@@ -4,6 +4,24 @@
 .navbar-brand img {
   width: 75%;
 }
+
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  background: linear-gradient(140.6deg, #4a92ff 7.14%, #78cb83 99.09%);
+}
+
+/* .form-check-input:checked {
+  background-image: linear-gradient(
+    140.6deg,
+    #4a92ff 7.14%,
+    #78cb83 99.09%
+  ) !important;
+} */
+
+.link-decoration {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 767px) {
   .form {
     width: 80%;
